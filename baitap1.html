@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 01 - Lý thuyết Lập trình Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- PHẦN 1: MENU ĐIỀU HƯỚNG -->
+    <header>
+        <div class="header-content">
+            <h1>LẬP TRÌNH WEB</h1>
+
+            <nav>
+                <a href="index.html">Trang chủ</a>
+                <a href="baitap01.html">Lý thuyết</a>
+                <a href="baitap02.html">Đăng ký</a>
+                <a href="baitap03.html">Đếm ngược</a>
+                <a href="baitap22.html">Bài tập 22</a>
+                <a href="baitap23.html">Bài tập 23</a>
+                <a href="diemdanh.html">Điểm danh</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PHẦN 2: NỘI DUNG LÝ THUYẾT -->
+    <main class="container">
+        <h2>BÀI TẬP 01 - PHẦN LÝ THUYẾT</h2>
+
+        <!-- CÂU 1 -->
+        <section class="card">
+            <h3>Câu 1: Phân biệt position: relative và position: absolute</h3>
+
+            <p>
+                <strong>position: relative:</strong> Phần tử được định vị tương đối
+                so với vị trí ban đầu của chính nó. Phần tử vẫn giữ chỗ trong bố cục.
+            </p>
+
+            <p>
+                <strong>position: absolute:</strong> Phần tử được định vị theo phần tử
+                tổ tiên gần nhất có position khác static. Phần tử bị đưa ra khỏi luồng
+                bố cục thông thường.
+            </p>
+
+            <p><strong>Ví dụ CSS:</strong></p>
+
+            <pre><code>
+.container-demo {
+    position: relative;
+    height: 200px;
+}
+
+.box-demo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+            </code></pre>
+
+            <p>
+                <strong>Ứng dụng:</strong> Relative thường dùng làm phần tử cha để
+                định vị phần tử con. Absolute phù hợp đặt biểu tượng, nhãn hoặc nút
+                tại một vị trí cụ thể bên trong khung.
+            </p>
+
+            <p>
+                <strong>Responsive và hosting:</strong> Nên kết hợp đơn vị linh hoạt,
+                Flexbox hoặc Grid và media query để giao diện phù hợp nhiều màn hình.
+                Khi deploy lên hosting, cần kiểm tra đường dẫn CSS, hình ảnh và hiển
+                thị trên điện thoại.
+            </p>
+        </section>
+
+        <!-- CÂU 2 -->
+        <section class="card">
+            <h3>Câu 2: Domain, DNS, Hosting và triển khai website</h3>
+
+            <p>
+                <strong>Domain (tên miền):</strong> Là địa chỉ giúp người dùng truy cập
+                website, ví dụ: example.com.
+            </p>
+
+            <p>
+                <strong>DNS:</strong> Là hệ thống phân giải tên miền thành địa chỉ IP
+                hoặc thông tin máy chủ tương ứng để trình duyệt tìm được website.
+            </p>
+
+            <p>
+                <strong>Hosting:</strong> Là dịch vụ lưu trữ các tệp website như HTML,
+                CSS, JavaScript và hình ảnh để người dùng truy cập qua Internet.
+            </p>
+
+            <p><strong>Quy trình triển khai website:</strong></p>
+            <ol>
+                <li>Tạo các tệp HTML, CSS, JavaScript và hình ảnh.</li>
+                <li>Đăng ký tên miền hoặc sử dụng địa chỉ miễn phí.</li>
+                <li>Đưa mã nguồn lên hosting, ví dụ GitHub Pages.</li>
+                <li>Cấu hình DNS nếu sử dụng tên miền riêng.</li>
+                <li>Kiểm tra website bằng trình duyệt trên máy tính và điện thoại.</li>
+            </ol>
+
+            <p><strong>Bảo mật khi triển khai:</strong></p>
+            <ul>
+                <li>Sử dụng HTTPS để mã hóa dữ liệu truyền tải.</li>
+                <li>Không công khai mật khẩu, khóa API hoặc thông tin bí mật.</li>
+                <li>Kiểm tra dữ liệu đầu vào để hạn chế lỗi và lỗ hổng bảo mật.</li>
+                <li>Sao lưu mã nguồn và cập nhật các thư viện cần thiết.</li>
+            </ul>
+        </section>
+
+        <!-- CÂU 3 -->
+        <section class="card">
+            <h3>Câu 3: Phân biệt var, let và const trong JavaScript</h3>
+
+            <p>
+                <strong>var:</strong> Có phạm vi hàm, có thể khai báo lại và được
+                hoisting với giá trị ban đầu là undefined.
+            </p>
+
+            <p>
+                <strong>let:</strong> Có phạm vi khối lệnh, có thể gán lại giá trị
+                nhưng không thể khai báo lại cùng tên trong cùng phạm vi.
+            </p>
+
+            <p>
+                <strong>const:</strong> Có phạm vi khối lệnh và phải được khởi tạo
+                khi khai báo. Không thể gán lại biến sau khi khởi tạo.
+            </p>
+
+            <p><strong>Ví dụ:</strong></p>
+
+            <pre><code>
+var ten = "An";
+let tuoi = 20;
+const lop = "CNTT";
+
+tuoi = 21;
+
+console.log(ten);
+console.log(tuoi);
+console.log(lop);
+            </code></pre>
+
+            <p>
+                <strong>Hoisting:</strong> JavaScript xử lý khai báo trước khi thực
+                thi mã. Biến var có thể được truy cập trước dòng khai báo nhưng có
+                giá trị undefined; let và const nằm trong vùng temporal dead zone
+                cho đến khi được khởi tạo.
+            </p>
+
+            <p>
+                <strong>Debug:</strong> Dùng console.log() để kiểm tra giá trị,
+                đọc thông báo lỗi trong Console và đặt breakpoint trong tab Sources
+                của trình duyệt. Nên ưu tiên let và const để kiểm soát phạm vi biến.
+            </p>
+        </section>
+
+        <!-- CÂU 4 -->
+        <section class="card">
+            <h3>Câu 4: Event Delegation trong JavaScript</h3>
+
+            <p>
+                Event Delegation là kỹ thuật gắn một trình xử lý sự kiện vào phần tử
+                cha để xử lý sự kiện phát sinh từ các phần tử con, thông qua thuộc
+                tính event.target.
+            </p>
+
+            <p><strong>Ví dụ:</strong></p>
+
+            <pre><code>
+&lt;ul id="danhSach"&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+document.getElementById("danhSach")
+    .addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            alert("Bạn đã chọn: " + event.target.textContent);
+        }
+    });
+&lt;/script&gt;
+            </code></pre>
+
+            <p>
+                <strong>Nguyên lý:</strong> Khi người dùng nhấn vào một thẻ li,
+                sự kiện nổi lên phần tử ul. Trình xử lý kiểm tra event.target để
+                xác định phần tử thực sự được nhấn.
+            </p>
+
+            <p>
+                <strong>Ưu điểm:</strong> Giảm số lượng trình xử lý sự kiện, tiết
+                kiệm tài nguyên và có thể xử lý các phần tử con được thêm vào sau
+                khi trang đã tải.
+            </p>
+        </section>
+
+        <!-- PHẦN 3: KẾT THÚC -->
+        <section class="card">
+            <h3>Kết luận</h3>
+            <p>
+                Các kiến thức về định vị CSS, domain, DNS, hosting, biến JavaScript
+                và Event Delegation giúp xây dựng website có giao diện phù hợp,
+                hoạt động hiệu quả và dễ triển khai.
+            </p>
+
+            <a class="button" href="index.html">Quay lại trang chủ</a>
+        </section>
+    </main>
+
+    <!-- PHẦN 4: CHÂN TRANG -->
+    <footer>
+        <p>© 2026 - Bài tập Lập trình Web</p>
+    </footer>
+
+</body>
+</html>

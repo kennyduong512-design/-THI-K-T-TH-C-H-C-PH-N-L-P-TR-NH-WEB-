@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website tổng hợp bài tập Lập trình Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="top">
+    <div class="header-content">
+        <h1>LẬP TRÌNH WEB</h1>
+        <nav>
+            <a href="#home">Trang chủ</a>
+            <a href="#lythuyet">Lý thuyết</a>
+            <a href="#dangky">Đăng ký</a>
+            <a href="#demnguoc">Đếm ngược</a>
+            <a href="#baitap22">Bài tập 22</a>
+            <a href="#baitap23">Bài tập 23</a>
+            <a href="#gioithieu">Giới thiệu</a>
+            <a href="#lienhe">Liên hệ</a>
+            <a href="#diemdanh">Điểm danh</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- 1. TRANG CHỦ -->
+    <section id="home" class="container">
+        <div class="card">
+            <h2>WEBSITE TỔNG HỢP BÀI TẬP</h2>
+            <p>
+                Chào mừng bạn đến với website thực hành học phần
+                Lập trình Web.
+            </p>
+            <p>
+                Website tổng hợp lý thuyết, tìm kiếm sản phẩm,
+                form đăng ký, đồng hồ đếm ngược và các khu vực
+                bài tập khác trên cùng một trang.
+            </p>
+            <a class="button" href="#lythuyet">Bắt đầu học</a>
+        </div>
+
+        <!-- TÌM KIẾM SẢN PHẨM TỪ PHẦN 1 -->
+        <div class="card">
+            <h2>TÌM KIẾM SẢN PHẨM</h2>
+            <div class="search-box">
+                <input id="searchInput" type="text"
+                       placeholder="Nhập tên sản phẩm...">
+                <button id="searchButton" class="button"
+                        type="button">Tìm kiếm</button>
+                <button id="clearButton" class="button"
+                        type="button">Xóa</button>
+            </div>
+            <div id="productList" class="product-grid"></div>
+        </div>
+    </section>
+
+    <!-- 2. LÝ THUYẾT -->
+    <section id="lythuyet" class="container">
+        <h2>BÀI TẬP 01 - PHẦN LÝ THUYẾT</h2>
+
+        <div class="card">
+            <h3>Câu 1: position relative và absolute</h3>
+            <p>
+                <strong>Relative:</strong> định vị phần tử tương đối
+                với vị trí ban đầu và vẫn giữ chỗ trong bố cục.
+            </p>
+            <p>
+                <strong>Absolute:</strong> định vị phần tử theo tổ tiên
+                gần nhất có position khác static và không giữ chỗ
+                trong luồng bố cục thông thường.
+            </p>
+            <pre><code>.container {
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}</code></pre>
+            <p>
+                Để responsive, nên kết hợp Flexbox, Grid, đơn vị linh hoạt
+                và media query; đồng thời kiểm tra đường dẫn tài nguyên
+                khi triển khai website.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Câu 2: Domain, DNS và Hosting</h3>
+            <p>
+                Domain là tên miền dùng để truy cập website.
+                DNS phân giải tên miền thành thông tin máy chủ.
+                Hosting lưu trữ các tệp website để người dùng truy cập.
+            </p>
+            <p>Quy trình triển khai:</p>
+            <ol>
+                <li>Hoàn thiện HTML, CSS và JavaScript.</li>
+                <li>Đưa mã nguồn lên hosting.</li>
+                <li>Cấu hình DNS nếu sử dụng tên miền riêng.</li>
+                <li>Kiểm tra đường dẫn, giao diện và HTTPS.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Câu 3: var, let và const</h3>
+            <ul>
+                <li><strong>var:</strong> phạm vi hàm, có thể khai báo lại.</li>
+                <li><strong>let:</strong> phạm vi khối, có thể gán lại.</li>
+                <li><strong>const:</strong> phạm vi khối, không thể gán lại.</li>
+            </ul>
+            <pre><code>var ten = "An";
+let tuoi = 20;
+const lop = "CNTT";
+
+tuoi = 21;
+
+console.log(ten, tuoi, lop);</code></pre>
+            <p>
+                Dùng Console và breakpoint trong Developer Tools
+                để kiểm tra lỗi JavaScript.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Câu 4: Event Delegation</h3>
+            <p>
+                Event Delegation là cách gắn trình xử lý sự kiện vào
+                phần tử cha để xử lý sự kiện từ các phần tử con.
+            </p>
+            <pre><code>document.getElementById("danhSach")
+    .addEventListener("click", function(event) {
+        if (event.target.tagName === "LI") {
+            alert(event.target.textContent);
+        }
+    });</code></pre>
+            <p>
+                Ưu điểm là giảm số lượng trình xử lý sự kiện và
+                hỗ trợ các phần tử con được thêm động.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3. FORM ĐĂNG KÝ -->
+    <section id="dangky" class="container">
+        <div class="card form-container">
+            <h2>BÀI TẬP 02 - FORM ĐĂNG KÝ</h2>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullname">Họ và tên:</label>
+                    <input id="fullname" name="fullname"
+                           type="text" required
+                           placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email"
+                           type="email" required
+                           placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input id="password" name="password"
+                           type="password" required
+                           placeholder="Ít nhất 8 ký tự">
+                    <small>
+                        Cần có chữ hoa, chữ thường và chữ số.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input id="terms" type="checkbox">
+                        Tôi đồng ý với điều khoản sử dụng.
+                    </label>
+                </div>
+
+                <button class="button" type="submit">Đăng ký</button>
+                <button class="button" type="reset">Làm mới</button>
+
+                <p id="formMessage" role="status"
+                   aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- 4. ĐỒNG HỒ ĐẾM NGƯỢC -->
+    <section id="demnguoc" class="container">
+        <div class="card timer-container">
+            <h2>BÀI TẬP 03 - ĐỒNG HỒ ĐẾM NGƯỢC</h2>
+            <p>Thời gian đếm ngược: 10 phút.</p>
+
+            <div id="timerDisplay" class="timer"
+                 role="timer" aria-live="off">10:00</div>
+
+            <p id="timerMessage" role="status" aria-live="polite">
+                Đồng hồ đang chờ bắt đầu.
+            </p>
+
+            <div class="timer-buttons">
+                <button id="startTimer" class="button"
+                        type="button">Bắt đầu</button>
+                <button id="pauseTimer" class="button"
+                        type="button" disabled>Tạm dừng</button>
+                <button id="resetTimer" class="button"
+                        type="button">Đặt lại</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. BÀI TẬP 22 -->
+    <section id="baitap22" class="container">
+        <div class="card">
+            <h2>BÀI TẬP 22</h2>
+            <p>
+                https://docs.google.com/document/d/1o-sVjhWntztOvybjDeVFZCC82XkSASyH1sOjsXGp9So/edit?pli=1&tab=t.0.
+            </p>
+        </div>
+    </section>
+
+    <!-- 6. BÀI TẬP 23 -->
+    <section id="baitap23" class="container">
+        <div class="card">
+            <h2>BÀI TẬP 23</h2>
+            <p>
+                https://6adb0eae7e49bc19b2a9f0ee--glistening-pegasus-ac69c0.netlify.app/
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. GIỚI THIỆU -->
+    <section id="gioithieu" class="container">
+        <div class="card">
+            
+<section id="gioithieu" class="container">
+    <div class="card profile-card">
+        <img
+            src="images/avatar.jpg"
+            alt="Ảnh cá nhân"
+            class="profile-avatar"
+        >
+
+        <h2>GIỚI THIỆU BẢN THÂN</h2>
+
+        <p><strong>Họ và tên:</strong> Đặng Thái Dương </p>
+        <p><strong>Mã số sinh viên:</strong> 221A010978</p>
+        <p><strong>Trường:</strong> Đại học Văn Hiến</p>
+        <p><strong>Ngành học:</strong> Công nghệ thông tin</p>
+        <p><strong>Môn học:</strong> Lập trình Web</p>
+    </div>
+</section>
+
+    </section>
+
+    <!-- 8. LIÊN HỆ -->
+    <section id="lienhe" class="container">
+        <div class="card">
+            <h2>LIÊN HỆ</h2>
+            <p>Email: Kennyduong512@gmail.com </p>
+            <p>Trường: Đại học Văn Hiến</p>
+            <p>Ngành: Công nghệ thông tin</p>
+        </div>
+    </section>
+
+    <!-- 9. THÔNG TIN ĐIỂM DANH -->
+    <section id="diemdanh" class="container">
+        <div class="card">
+            <h2>THÔNG TIN ĐIỂM DANH</h2>
+            <p>Họ và tên: Đặng Thái Dương </p>
+            <p>MSSV: 221A010978 </p>
+            <p>Môn học: Lập trình Web</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 - Website tổng hợp bài tập Lập trình Web</p>
+    <a href="#top">Trở về đầu trang ↑</a>
+</footer>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>

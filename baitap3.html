@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 03 - Đồng hồ đếm ngược</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>ĐỒNG HỒ ĐẾM NGƯỢC</h1>
+            <nav>
+                <a href="index.html">Trang chủ</a>
+                <a href="baitap01.html">Lý thuyết</a>
+                <a href="baitap02.html">Đăng ký</a>
+                <a href="baitap03.html">Đếm ngược</a>
+                <a href="baitap22.html">Bài tập 22</a>
+                <a href="baitap23.html">Bài tập 23</a>
+                <a href="diemdanh.html">Điểm danh</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card timer-container">
+            <h2>THỬ THÁCH 10 PHÚT</h2>
+
+            <p>
+                Nhấn Bắt đầu để khởi chạy đồng hồ.
+                Khi còn dưới 1 phút, đồng hồ sẽ đổi màu và nhấp nháy.
+            </p>
+
+            <div id="timerDisplay" class="timer" role="timer"
+                 aria-live="off">10:00</div>
+
+            <p id="timerMessage" role="status" aria-live="polite">
+                Đồng hồ đang chờ bắt đầu.
+            </p>
+
+            <div class="timer-buttons">
+                <button id="startTimer" class="button" type="button">
+                    Bắt đầu
+                </button>
+
+                <button id="pauseTimer" class="button" type="button" disabled>
+                    Tạm dừng
+                </button>
+
+                <button id="resetTimer" class="button" type="button">
+                    Đặt lại
+                </button>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Giải thích chức năng</h3>
+            <ul>
+                <li><strong>setInterval():</strong> cập nhật thời gian mỗi giây.</li>
+                <li><strong>clearInterval():</strong> dừng bộ đếm.</li>
+                <li><strong>MM:SS:</strong> hiển thị phút và giây.</li>
+                <li><strong>Hiệu ứng cảnh báo:</strong> kích hoạt khi còn dưới 60 giây.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 - Bài tập Lập trình Web</p>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

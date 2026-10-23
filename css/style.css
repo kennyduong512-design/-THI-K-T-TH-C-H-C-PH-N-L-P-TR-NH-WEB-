@@ -1,0 +1,433 @@
+
+/* =================================
+   1. CAU HINH CHUNG
+================================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #263247;
+    background: #f3f6fb;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 27px;
+    color: #173b70;
+    margin-bottom: 22px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #234d82;
+    margin-bottom: 12px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: #1769c2;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+/* =================================
+   2. HEADER VA MENU
+================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: white;
+    background: linear-gradient(120deg, #102c52, #1769aa);
+    box-shadow: 0 4px 18px rgba(16, 44, 82, 0.18);
+}
+
+.header-content {
+    width: min(1200px, 94%);
+    margin: auto;
+    padding: 14px 0;
+}
+
+header h1 {
+    margin: 0 0 12px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    color: #173b70;
+    background: #ffffff;
+}
+
+/* =================================
+   3. CAC KHU VUC NOI DUNG
+================================= */
+main > section {
+    scroll-margin-top: 110px;
+}
+
+main > section:nth-child(even) {
+    background: #eaf1fa;
+}
+
+.card {
+    margin: 18px 0;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 7px 24px rgba(31, 58, 91, 0.07);
+}
+
+.card h2 {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e7eef8;
+}
+
+.card h3 {
+    margin-top: 4px;
+}
+
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 18px;
+    border-radius: 10px;
+    background: #132238;
+    color: #e6f0ff;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+/* =================================
+   4. NUT BAM
+================================= */
+.button {
+    display: inline-block;
+    padding: 11px 18px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    background: #1769c2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #104d91;
+    transform: translateY(-1px);
+}
+
+.button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =================================
+   5. TIM KIEM SAN PHAM
+================================= */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.search-box input {
+    flex: 1 1 250px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    outline: none;
+    background: #ffffff;
+}
+
+.search-box input {
+    width: auto;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #1769c2;
+    box-shadow: 0 0 0 3px rgba(23, 105, 194, 0.12);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.product-card {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e0e7f0;
+    border-radius: 12px;
+    transition: 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(31, 58, 91, 0.1);
+}
+
+.product-card h3 {
+    margin-bottom: 8px;
+}
+
+/* =================================
+   6. FORM DANG KY
+================================= */
+.form-container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.form-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 6px;
+    color: #64748b;
+}
+
+.success {
+    color: #157347;
+    font-weight: 700;
+}
+
+.error {
+    color: #c62828;
+    font-weight: 700;
+}
+
+/* =================================
+   7. DONG HO DEM NGUOC
+================================= */
+.timer-container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.timer {
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 16px;
+    background: #e9f2ff;
+    color: #1769c2;
+    font-family: Consolas, monospace;
+    font-size: clamp(48px, 8vw, 76px);
+    font-weight: 800;
+    letter-spacing: 4px;
+    transition: 0.3s;
+}
+
+.timer.warning {
+    color: #c62828;
+    background: #ffebee;
+    animation: timerBlink 0.8s infinite alternate;
+}
+
+@keyframes timerBlink {
+    from { opacity: 1; }
+    to { opacity: 0.55; }
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* =================================
+   8. ANH DAI DIEN
+================================= */
+
+.profile-avatar {
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 15px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 3px solid #dbeafe;
+    box-shadow: 0 3px 10px rgba(23, 105, 194, 0.15);
+}
+
+}
+
+/* =================================
+   9. CHAN TRANG
+================================= */
+footer {
+    padding: 28px 16px;
+    text-align: center;
+    color: #eaf2ff;
+    background: #102c52;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+/* =================================
+   10. RESPONSIVE
+================================= */
+@media (max-width: 700px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    .container {
+        width: 94%;
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    header nav {
+        gap: 5px;
+    }
+
+    header nav a {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+    }
+
+    .timer {
+        letter-spacing: 1px;
+        padding: 18px 8px;
+    }
+
+    .timer-buttons {
+        flex-direction: column;
+    }
+
+    .timer-buttons .button {
+        width: 100%;
+        margin: 0;
+    }
+}
